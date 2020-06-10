@@ -11,7 +11,7 @@ class Navbar extends Component {
 	componentDidMount() {
     if (!localStorage.getItem("token")) {
       // User is not logged in. Redirect back to login
-      this.props.history.push(routes.login);
+      this.props.history.push(routes.home);
       message.warning("Please login first");
       return;
     }
@@ -63,6 +63,9 @@ class Navbar extends Component {
 			       <li className="nav-item">
 			        <Link className="nav-link text-white text-uppercase ml-4" to="/contact">Contact</Link>
 			      </li>
+			     <li className="nav-item ">
+				   <Link className="nav-link text-white text-uppercase ml-4" to="/hostTournament">Host Tournament&nbsp;<i className="fas fa-volleyball-ball"></i></Link>
+			   	 </li>
 			      <li className="nav-item ">
 				   <Link className="nav-link text-white text-uppercase ml-4" to="/dashboard">Dashboard&nbsp;<i className="fa fa-user-circle-o" aria-hidden="true"></i></Link>
 			   	 </li>

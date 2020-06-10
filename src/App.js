@@ -11,6 +11,7 @@ import Aboutus from './components/pages/AboutUs/Aboutus';
 import Contact from './components/pages/Contact/Contact';
 import NotFoundPage from './components/pages/NotFoundPage/NotFoundPage';
 import DashboardPage from './components/pages/DashboardPage';
+import HostTournament from './components/pages/HostTournament/HostTournament';
  
 const initialState={
                   path:'home',
@@ -38,12 +39,14 @@ class App extends Component{
           <div>
            <Navbar isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
                 <Switch>
-                      <Route exact path="/" component={Home}/>
+                      <Route exact path="/"  render={(props) => <Home {...props} isSignedIn={isSignedIn} />}/>
                       <Route path="/login" render={(props) => <Login {...props} onRouteChange={this.onRouteChange} />}/>
                       <Route path="/signup"  render={(props) => <Signup {...props} onRouteChange={this.onRouteChange} />}/>
                       <Route path="/aboutus" component={Aboutus}/>
                       <Route path="/contact" component={Contact}/>
                       <Route path="/dashboard" component={DashboardPage}/>
+                      <Route path="/hostTournament" component={HostTournament}/>
+
                       <Route component={NotFoundPage}/>
                 </Switch>
            <Footer isSignedIn={isSignedIn} />       
