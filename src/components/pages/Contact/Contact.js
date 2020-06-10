@@ -57,16 +57,16 @@ class Contact extends Component {
                <div className="row">
                     <div className="col-md-6">
                         <div className="form-group">
-                            <input type="text" name="txtName" className="form-control" placeholder="Your Name *" value="" />
+                            <input type="text" name="txtName" className="form-control" placeholder="Your Name *" defaultValue="" />
                         </div>
                         <div className="form-group">
-                            <input type="text" name="txtEmail" className="form-control" placeholder="Your Email *" value="" />
+                            <input type="text" name="txtEmail" className="form-control" placeholder="Your Email *" defaultValue="" />
                         </div>
                         <div className="form-group">
-                            <input type="text" name="txtPhone" className="form-control" placeholder="Your Phone Number *" value="" />
+                            <input type="text" name="txtPhone" className="form-control" placeholder="Your Phone Number *" defaultValue="" />
                         </div>
                         <div className="form-group">
-                            <input type="submit" name="btnSubmit" className="btnContact" value="Send Message" />
+                            <input type="submit" name="btnSubmit" className="btnContact" defaultValue="Send Message" />
                         </div>
                     </div>
                     <div className="col-md-6">
