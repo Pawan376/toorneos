@@ -7,6 +7,7 @@ export default {
   contact: "/contact",
   dashboard: "/dashboard",
   hostTournament:'/hostTournament',
+  masterForm:'/masterForm',
   // Nested Dashboard pages
   statistics: "/dashboard/statistics",
   settings: "/dashboard/settings"

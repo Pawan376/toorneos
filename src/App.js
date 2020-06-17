@@ -12,10 +12,18 @@ import Contact from './components/pages/Contact/Contact';
 import NotFoundPage from './components/pages/NotFoundPage/NotFoundPage';
 import DashboardPage from './components/pages/DashboardPage';
 import HostTournament from './components/pages/HostTournament/HostTournament';
+import MasterForm from './components/pages/HostTournament/HostTournamentMultiForm/MasterForm';
+
  
 const initialState={
+                  input : '',
                   path:'home',
                   isSignedIn: false,
+                  user: 
+                      {
+                        name: '',
+                        address: ''
+                      }
                 }
 
 class App extends Component{
@@ -23,6 +31,21 @@ class App extends Component{
       super();
       this.state=initialState;       
         }
+
+      loadUser= (data)=>{
+          this.setState(
+          {
+              user: 
+                  {
+                  name: data.name,
+                  address: data.address
+                  }        
+          }
+        )
+      }
+onInputChange =(event)=>{
+    this.setState({input: event.target.value});
+  }
 
   onRouteChange =(path)=>{
     if(path==='home'){
@@ -45,14 +68,14 @@ class App extends Component{
                       <Route path="/aboutus" component={Aboutus}/>
                       <Route path="/contact" component={Contact}/>
                       <Route path="/dashboard" component={DashboardPage}/>
-                      <Route path="/hostTournament" component={HostTournament}/>
+                      <Route path="/hostTournament" render={(props) => <HostTournament {...props} loadUser={this.loadUser}  />}/>
+                      <Route path="/masterForm"  render={(props) => <MasterForm {...props} name={this.state.user.name} address={this.state.user.address} />}/>
 
                       <Route component={NotFoundPage}/>
                 </Switch>
-           <Footer isSignedIn={isSignedIn} />       
+           <Footer isSignedIn={isSignedIn} />    
           </div>
     );
   }
 }
-
 export default App;

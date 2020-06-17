@@ -38,7 +38,7 @@ class Navbar extends Component {
 			    </span>
 			  </button>
 
-			  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+			  <div className="collapse navbar-collapse" id="navbarSupportedContent" data-toggle="collapse" data-target=".navbar-collapse.show">
 			    <ul className="navbar-nav mr-auto">
 			      <li className="nav-item active">
 			        <Link className="nav-link text-white text-uppercase ml-4" to="/">Home&nbsp;<i className="fas fa-home"></i> <span className="sr-only">(current)</span></Link>
@@ -107,7 +107,7 @@ class Navbar extends Component {
 				    </span>
 				  </button>
 
-				  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+				  <div className="collapse navbar-collapse" id="navbarSupportedContent"  data-toggle="collapse" data-target=".navbar-collapse.show" >
 				    <ul className="navbar-nav mr-auto">
 				      <li className="nav-item active">
 				        <Link className="nav-link text-white text-uppercase ml-4" to="/">Home&nbsp;<i className="fas fa-home"></i> <span className="sr-only">(current)</span></Link>
